@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './InputArea.css'
 
 export default function InputArea({onSendMessage,isLoading}){
     const [input,setInput] = useState('');
