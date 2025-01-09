@@ -1,4 +1,6 @@
 
+import './ChatMessage.css'
+
 export default function ChatMessage({type,content}){
     return(
         <div className={`chat-message ${type}`}>

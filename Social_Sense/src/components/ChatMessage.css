@@ -1,0 +1,143 @@
+
+.chat-message {
+    display: flex;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .chat-message.user {
+    justify-content: flex-end;
+  }
+  
+  .message-content {
+    max-width: 55%;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user .message-content {
+    background-color: white;
+    color: #1f2937;
+  }
+  
+  .system .message-content {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .system-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .system-logo {
+    margin-right: 0.5rem;
+  }
+  
+  .system-name {
+    font-weight: 600;
+  }
+  
+  .message-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .message-text p {
+    margin: 0.75rem 0;
+}
+
+.message-text p:first-child {
+    margin-top: 0;
+}
+
+.message-text p:last-child {
+    margin-bottom: 0;
+}
+
+.message-text strong {
+    font-weight: 600;
+    color: #f0f9ff;  /* Light blue for emphasis in system messages */
+}
+
+.user .message-text strong {
+    color: #1f2937;  /* Dark gray for user messages */
+}
+.message-text .number {
+  font-weight: 500;
+  color: #bae6fd;  /* Light blue for numbers */
+}
+
+.message-text .date {
+  font-weight: 500;
+  color: #bae6fd;  /* Light blue for dates */
+}
+/* Bullet Points */
+.bullet-point {
+  display: flex;
+  align-items: flex-start;
+  margin: 0.5rem 0;
+  padding-left: 0.5rem;
+}
+
+.bullet {
+  margin-right: 0.5rem;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.bullet-content {
+  flex: 1;
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  color: #e0f2fe; /* Light blue for headings */
+}
+
+/* Nested elements within bullets */
+.bullet-content .number,
+.bullet-content .date {
+  display: inline-block;
+  padding: 0 0.25rem;
+}
+
+/* Specific formatting for metrics */
+.bullet-point:has(.number) {
+  margin: 0.75rem 0;
+}
+
+/* First bullet in a section */
+.section-heading + .bullet-point {
+  margin-top: 0.75rem;
+}
+
+/* Lists container */
+.message-content div:has(.bullet-point) {
+  margin: 0.5rem 0;
+}
+/* Headers */
+.system-header, .user-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+.system-logo, .user-logo {
+  margin-right: 0.5rem;
+}
+
+.system-name, .user-name {
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+  
