@@ -21,6 +21,7 @@ export default function InputArea({onSendMessage,isLoading}){
                 onChange={(e)=>setInput(e.target.value)}
                 placeholder="Ask about your social media performance..."
                 className="message-input"
+                disabled={isLoading}
             >
             
             </input>
@@ -29,7 +30,7 @@ export default function InputArea({onSendMessage,isLoading}){
                 className={`send-button ${isLoading?'disabled':''}`}
                 disabled={isLoading}
             >
-                Send
+                {isLoading ? 'Sending...' : 'Send'}
             </button>
 
             </div>
