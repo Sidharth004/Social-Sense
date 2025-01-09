@@ -1,5 +1,4 @@
-// App.jsx
-import { useState, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Modal from './components/Modal';
 import ChatMessage from './components/ChatMessage';
@@ -13,26 +12,51 @@ export default function Chat() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const handleSendMessage = useCallback(async (message) => {
+    // Load messages from localStorage when component mounts
+    useEffect(() => {
+        try {
+            const savedMessages = localStorage.getItem('chatMessages');
+            if (savedMessages) {
+                setMessages(JSON.parse(savedMessages));
+            }
+        } catch (error) {
+            console.error('Error loading messages from localStorage:', error);
+        }
+    }, []);
+
+    // Save messages to localStorage whenever they change
+    useEffect(() => {
+        if (messages.length > 0) {
+            localStorage.setItem('chatMessages', JSON.stringify(messages));
+        }
+    }, [messages]);
+
+    const handleClearChat = () => {
+        setMessages([]);
+        localStorage.removeItem('chatMessages');
+    };
+
+    const handleSendMessage = async (message) => {
         try {
             setError(null);
             setIsLoading(true);
             
-            // Add user message immediately
+            // Add user message
             setMessages(prev => [...prev, { 
                 type: 'user', 
                 content: message 
             }]);
 
             const response = await langflowClient.sendChatMessage(message);
-            
-            if (response?.message) {
+            console.log('Response from langflowClient:', response);
+
+            if (response?.message?.text) {
                 setMessages(prev => [...prev, {
                     type: 'system',
-                    content: response.message
+                    content: response.message.text
                 }]);
             } else {
-                throw new Error('Invalid response format from server');
+                throw new Error('Invalid response format');
             }
 
         } catch (error) {
@@ -45,15 +69,24 @@ export default function Chat() {
         } finally {
             setIsLoading(false);
         }
-    }, []); // Empty dependency array since we're not using any external values
+    };
 
     return (
         <div className="chat-container">
             <Header />
+            <div className="chat-controls">
+                <button 
+                    onClick={handleClearChat}
+                    className="clear-chat-btn"
+                    disabled={messages.length === 0}
+                >
+                    Clear Chat
+                </button>
+            </div>
             <div className="messages-container">
                 {messages.map((message, index) => (
                     <ChatMessage
-                        key={`${message.type}-${index}`}
+                        key={`msg-${index}`}
                         type={message.type}
                         content={message.content}
                     />

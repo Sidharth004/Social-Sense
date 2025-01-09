@@ -18,14 +18,21 @@ class LangflowClient:
         """
         api_url = f"{self.base_url}/lf/{self.langflow_id}/api/v1/run/{self.flow_id}"
         
-        # Simplified tweaks to avoid Astra DB error
         payload = {
             "input_value": message,
             "input_type": input_type,
             "output_type": output_type,
-            "tweaks": {
+            "tweaks": tweaks or {
                 "ChatInput-z0i8A": {},
+                "ParseData-lNc9b": {},
                 "Prompt-gra52": {},
+                "SplitText-tJddc": {},
+                "ChatOutput-RMZRT": {},
+                "AstraDB-adZgd": {},
+                "AstraDB-nweIA": {},
+                "File-TWw0o": {},
+                "HuggingFaceInferenceAPIEmbeddings-Q7K36": {},
+                "HuggingFaceInferenceAPIEmbeddings-Jpga9": {},
                 "GroqModel-dOq5O": {}
             }
         }
@@ -41,15 +48,7 @@ class LangflowClient:
             response = requests.post(api_url, json=payload, headers=headers)
             print(f"Response status: {response.status_code}")
             print(f"Response content: {response.text}")
-            
-            # Handle non-200 responses
-            if response.status_code != 200:
-                error_data = response.json()
-                print(f"Error data: {error_data}")
-                if "detail" in error_data:
-                    raise Exception(f"Langflow API error: {error_data['detail']}")
-                raise Exception(f"Langflow API error: Status {response.status_code}")
-                
+            response.raise_for_status()  # Raise exception for bad status codes
             return response.json()
         except requests.exceptions.RequestException as e:
             raise Exception(f"Error calling Langflow API: {str(e)}")
