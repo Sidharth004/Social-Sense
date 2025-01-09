@@ -61,8 +61,15 @@ def chat():
         print(f"Error processing request: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
+# if __name__ == '__main__':
+#     print("Starting Flask server...")
+#     app.run(port=3000, debug=True)
+#     #port = int(os.environ.get('PORT', 3000))
+#     #app.run(host='0.0.0.0', port=port)
+
 if __name__ == '__main__':
-    print("Starting Flask server...")
-    app.run(port=3000, debug=True)
-    #port = int(os.environ.get('PORT', 3000))
-    #app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get('PORT', 3000))
+    if os.environ.get('FLASK_ENV') == 'production':
+        app.run(host='0.0.0.0', port=port)
+    else:
+        app.run(port=port, debug=True)
