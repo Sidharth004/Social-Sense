@@ -27,7 +27,7 @@ export default function Header(){
                     <i className="fab fa-github"></i> GitHub
                 </a>
                 <div className="status-badge">
-                  ⚪️ Systems Active 
+                  😊 Systems Active 
                 </div>
             </div>
         </header>

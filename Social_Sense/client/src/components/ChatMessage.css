@@ -62,20 +62,20 @@
 
 .message-text strong {
     font-weight: 600;
-    color: #f0f9ff;  /* Light blue for emphasis in system messages */
+    color: #d9fd0a;  /* Light blue for emphasis in system messages */
 }
 
 .user .message-text strong {
     color: #1f2937;  /* Dark gray for user messages */
 }
 .message-text .number {
-  font-weight: 500;
-  color: #bae6fd;  /* Light blue for numbers */
+  font-weight: 600;
+  color: #d9fd0a;  /* Light blue for numbers */
 }
 
 .message-text .date {
-  font-weight: 500;
-  color: #bae6fd;  /* Light blue for dates */
+  font-weight: 600;
+  color: #d9fd0a;  /* Light blue for dates */
 }
 /* Bullet Points */
 .bullet-point {
@@ -100,7 +100,7 @@
   font-size: 1rem;
   font-weight: 600;
   margin: 1rem 0 0.5rem 0;
-  color: #e0f2fe; /* Light blue for headings */
+  color: #fffefe; /* Light blue for headings */
 }
 
 /* Nested elements within bullets */
