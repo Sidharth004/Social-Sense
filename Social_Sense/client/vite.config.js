@@ -9,7 +9,7 @@ export default defineConfig({
   },
   base: '/',
   server: {
-    port: 5173,
+    port: 4175,
     // Keep proxy for development
     proxy: {
       '/api': {
