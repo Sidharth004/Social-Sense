@@ -140,4 +140,20 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-  
+
+.chat-message.system {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Platform-specific colors */
+.message-text strong:contains("Facebook") {
+  color: #1877F2;
+}
+
+.message-text strong:contains("Instagram") {
+  color: #E4405F;
+}
+
+.message-text strong:contains("Twitter") {
+  color: #1DA1F2;
+}
