@@ -31,6 +31,24 @@ export default function Chat() {
         }
     }, [messages]);
 
+    //
+    useEffect(() => {
+        try {
+            const savedMessages = localStorage.getItem('chatMessages');
+            if (!savedMessages) {
+                // Set initial welcome message
+                setMessages([{
+                    type: 'system',
+                    content: "Hello!👋 I'm SocialSense AI 🤖, your social media analytics assistant.\n I've analyzed your dataset and can help you understand your social media performance across different platforms and content categories. Feel free to ask me anything about your metrics, engagement rates, or content strategy! 📊 \n For first run AI response might take a couple of mins due to initiation of workflow. \n Due to ratelimit constraints - for groq free plan - 3 -4 word queries work best ;)"
+                }]);
+            }
+        } catch (error) {
+            console.error('Error setting initial message:', error);
+        }
+    }, []);
+
+    //
+
     const handleClearChat = () => {
         setMessages([]);
         localStorage.removeItem('chatMessages');
@@ -73,8 +91,9 @@ export default function Chat() {
 
     return (
         <div className="chat-container">
-            <Header />
-            <div className="chat-controls">
+            <div className="blob"></div>
+            <Header onClearChat={handleClearChat}/>
+            {/* <div className="chat-controls">
                 <button 
                     onClick={handleClearChat}
                     className="clear-chat-btn"
@@ -82,7 +101,7 @@ export default function Chat() {
                 >
                     Clear Chat
                 </button>
-            </div>
+            </div> */}
             <div className="messages-container">
                 {messages.map((message, index) => (
                     <ChatMessage
@@ -109,6 +128,7 @@ export default function Chat() {
             <InputArea 
                 onSendMessage={handleSendMessage} 
                 isLoading={isLoading} 
+                onClearChat={handleClearChat}
             />
             {showModal && <Modal onClose={() => setShowModal(false)} />}
         </div>

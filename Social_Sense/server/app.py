@@ -9,7 +9,7 @@ from langflow_api.client import LangflowClient
 load_dotenv()
 
 ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Development
+    "http://localhost:4175",  # Development
     "https://animated-basbousa-4190ed.netlify.app",  # Netlify domain
 ]
 
@@ -44,7 +44,7 @@ def chat():
         response = client.run_flow(message=message)
         print(f"Langflow response: {json.dumps(response, indent=2)}")
         
-        # Try different paths to extract the message
+        # extract the message
         ai_message = None
         try:
             # First attempt: normal path

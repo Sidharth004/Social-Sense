@@ -4,8 +4,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  color: #ffffff;
-  background: linear-gradient(to bottom right, #06b6d4, #0ea5e9, #14b8a6);
+  color: #333333;
+  background: #F8F8F8;
   min-height: 100vh;
 }
 
