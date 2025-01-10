@@ -8,6 +8,8 @@ With SocialSense AI, users can simply type their queries and receive actionable 
 
 **Deployment Link** - https://animated-basbousa-4190ed.netlify.app/
 
+**Watch Demo** - https://youtu.be/4m2VtXyETM0
+
 ## Technologies:
 - Flask
 - React
