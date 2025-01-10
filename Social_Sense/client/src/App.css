@@ -95,7 +95,8 @@
   gap: 0.5rem;
   align-items: center;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  background-color:#4CAF50;
   border-radius: 1rem;
 }
 

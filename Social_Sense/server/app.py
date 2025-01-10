@@ -9,7 +9,7 @@ from langflow_api.client import LangflowClient
 load_dotenv()
 
 ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Development
+    "http://localhost:4175",  # Development
     "https://animated-basbousa-4190ed.netlify.app",  # Netlify domain
 ]
 
