@@ -44,7 +44,7 @@ def chat():
         response = client.run_flow(message=message)
         print(f"Langflow response: {json.dumps(response, indent=2)}")
         
-        # Try different paths to extract the message
+        # extract the message
         ai_message = None
         try:
             # First attempt: normal path
