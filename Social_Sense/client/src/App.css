@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  /* background: linear-gradient(to bottom right, #06b6d4, #0ea5e9, #14b8a6); */
   background: #F8F8F8;
   /* background: #EEEEEE */
+  position: relative; 
+  overflow: hidden; 
+  z-index: 1;
 }
 /*  */
 .blob {
@@ -42,6 +44,8 @@
   flex: 1;
   overflow: auto;
   padding: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .messages-container > * + * {
