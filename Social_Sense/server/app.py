@@ -8,9 +8,19 @@ from langflow_api.client import LangflowClient
 # Load environment variables
 load_dotenv()
 
-app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173","https://your-vercel-app-url.vercel.app"]}})
+ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Development
+    "https://animated-basbousa-4190ed.netlify.app",  # Netlify domain
+]
 
+app = Flask(__name__)
+CORS(app, resources={
+    r"/api/*": {
+        "origins": ALLOWED_ORIGINS,
+        "methods": ["POST", "OPTIONS", "GET"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
 # Initialize Langflow client
 client = LangflowClient(
     base_url="https://api.langflow.astra.datastax.com",
