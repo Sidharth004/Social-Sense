@@ -1,57 +1,73 @@
 .header {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .avatar-container {
-    position: relative;
-  }
-  
-  .avatar {
-    border-radius: 50%;
-    border: 2px solid white;
-  }
-  
-  .status-indicator {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0.75rem;
-    height: 0.75rem;
-    background-color: #10b981;
-    border-radius: 50%;
-    border: 2px solid white;
-  }
-  
-  .chatbot-name {
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-  
-  .chatbot-description {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .status-badge {
-    background-color: #10b981;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  background: #F8F8F8;
+  backdrop-filter: blur(10px);
+  /* color: white; */
+  color: #333333;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+.chatbot-name {
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.chatbot-description {
+  font-size: 0.875rem;
+  color: #666666;
+  /* color: rgba(255, 255, 255, 0.8); */
+  margin: 0 0 0 0;
+}
+
+.header-actions {
+  font-weight:500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.demo-link {
+  /* color: white; */
+  color: #333333;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+}
+
+.demo-link:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+.status-badge {
+  background: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8em;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 2rem;
+}
+

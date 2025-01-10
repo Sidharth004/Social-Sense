@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './InputArea.css'
 
-export default function InputArea({onSendMessage,isLoading}){
+export default function InputArea({onSendMessage,isLoading,onClearChat}){
     const [input,setInput] = useState('');
 
     const handleSubmit =(e)=>{
@@ -31,6 +31,12 @@ export default function InputArea({onSendMessage,isLoading}){
                 disabled={isLoading}
             >
                 {isLoading ? 'Sending...' : 'Send'}
+            </button>
+            <button 
+                onClick={onClearChat}
+                className="clear-chat-button"
+            >
+                Clear Chat
             </button>
 
             </div>

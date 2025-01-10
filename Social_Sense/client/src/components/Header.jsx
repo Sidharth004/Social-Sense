@@ -4,17 +4,32 @@ export default function Header(){
     return(
         <header className="header">
             <div className="header-content">
-                <div className="avatar-container">
-                    {/* image */}
-                    {/* <div className="status-indicator"></div> */}
-                </div>
-            
-                <div className="chatbot-info">
-                    <h1 className="chatbot-name">SocialSense</h1>
+                <div className="title-container">
+                    <h1 className="chatbot-name">🤖 SocialSense</h1>
                     <p className="chatbot-description">Your social media analytics assistant</p>
                 </div>
             </div>
-            <span className="status-badge">Active</span>
+            <div className="header-actions">
+                <a 
+                    href="https://animated-basbousa-4190ed.netlify.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="demo-link"
+                >
+                    Check Demo
+                </a>
+                <a 
+                    href="https://github.com/Sidharth004/Social-Sense" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="demo-link"
+                >
+                    <i className="fab fa-github"></i> GitHub
+                </a>
+                <div className="status-badge">
+                  ⚪️ Systems Active 
+                </div>
+            </div>
         </header>
     )
 }

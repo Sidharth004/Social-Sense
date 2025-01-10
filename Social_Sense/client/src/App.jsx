@@ -73,8 +73,9 @@ export default function Chat() {
 
     return (
         <div className="chat-container">
-            <Header />
-            <div className="chat-controls">
+            <div className="blob"></div>
+            <Header onClearChat={handleClearChat}/>
+            {/* <div className="chat-controls">
                 <button 
                     onClick={handleClearChat}
                     className="clear-chat-btn"
@@ -82,7 +83,7 @@ export default function Chat() {
                 >
                     Clear Chat
                 </button>
-            </div>
+            </div> */}
             <div className="messages-container">
                 {messages.map((message, index) => (
                     <ChatMessage
@@ -109,6 +110,7 @@ export default function Chat() {
             <InputArea 
                 onSendMessage={handleSendMessage} 
                 isLoading={isLoading} 
+                onClearChat={handleClearChat}
             />
             {showModal && <Modal onClose={() => setShowModal(false)} />}
         </div>

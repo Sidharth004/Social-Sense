@@ -1,7 +1,8 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -16,33 +17,48 @@
     padding: 2rem;
     max-width: 28rem;
     width: 100%;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  .modal-title-logo{
+    display: flex;
+    font-size: 2.875rem;
+    justify-content: center;
+    margin: 0%;
   }
   
   .modal-title {
     font-size: 1.875rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    color: #1f2937;
+    justify-content: center;
+    margin-top: 0%;
+    /* color: #1f2937; */
+    color: #333333;
+
   }
   
   .modal-description {
     margin-bottom: 1.5rem;
-    color: #4b5563;
+    /* color: #4b5563; */
+    color: #666666;
   }
   
   .modal-subtitle {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: #374151;
+    /* color: #374151; */
+    color: #444444;
   }
   
   .modal-list {
     list-style-type: disc;
     list-style-position: inside;
     margin-bottom: 1.5rem;
-    color: #4b5563;
+    /* color: #4b5563; */
+    color: #666666;
   }
   
   .modal-list li {
@@ -50,7 +66,8 @@
   }
   
   .modal-button {
-    background: linear-gradient(to right, #06b6d4, #0ea5e9);
+    /* background: linear-gradient(to right, #06b6d4, #0ea5e9); */
+    background-color: #4CAF50;
     color: white;
     font-weight: bold;
     padding: 0.75rem 1.5rem;
@@ -59,16 +76,20 @@
     transition: all 0.3s ease-in-out;
     border: none;
     cursor: pointer;
+    /*  */
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
   }
   
   .modal-button:hover {
-    background: linear-gradient(to right, #0891b2, #0284c7);
+    /* background: linear-gradient(to right, #0891b2, #0284c7); */
+    background-color: #45a049;
     transform: scale(1.05);
   }
   
   .modal-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.5);
+    /* box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.5); */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
   }
   
   
